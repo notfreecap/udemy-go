@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	data, err := os.ReadFile("data")
+	data, err := os.ReadFile("cr_data")
 	if err != nil {
 		log.Fatal("Unable to read file", err)
 	}
@@ -22,9 +22,9 @@ func main() {
 			continue
 		}
 
-		// if evaluateSafety(line, false) {
-		// 	safeLines++
-		// }
+		if evaluateSafety(line, false) {
+			safeLines++
+		}
 
 		if evaluateSafety(line, true) {
 			safeLinesNew++
